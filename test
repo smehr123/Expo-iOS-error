@@ -1,0 +1,22 @@
+appId: com.autograph.fangraph.dev
+---
+- evalScript: ${console.log('Starting the flow to access the replay screen')}
+- runFlow:
+    file: helpers/signIn.yaml
+    env:
+      EMAIL: 'arcpga123@gmail.com'
+      VERIFICATION_CODE: '099957'
+- extendedWaitUntil:
+    visible:
+      id: 'flash-back-id'
+    timeout: 10000
+- tapOn:
+    id: 'flash-back-id'
+- copyTextFrom:
+    id: 'streak-icon-text-id'
+- assertTrue: ${maestro.copiedText == 'Replay'}
+- tapOn:
+    id: 'close-btn-id'
+    waitToSettleTimeoutMs: 500 # ms
+- assertVisible:
+    id: 'new-tab-id-0'
