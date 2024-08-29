@@ -1,0 +1,110 @@
+Error: Request for viewHierarchy failed, because of unknown reason, body: {"code":"internal","errorMessage":"Unable to perform work on main run loop, process main thread busy for 30.0s"}
+29
+❌ Error: BlockingCoroutine is cancelling
+30
+kotlinx.coroutines.JobCancellationException: BlockingCoroutine is cancelling; job=BlockingCoroutine{Cancelling}@1c6682dc
+31
+Caused by: UnknownFailure(errorResponse=Request for viewHierarchy failed, code: 500, body: {"code":"internal","errorMessage":"Unable to perform work on main run loop, process main thread busy for 30.0s"})
+32
+at xcuitest.XCTestDriverClient.handleExceptions(XCTestDriverClient.kt:310)
+33
+at xcuitest.XCTestDriverClient.processResponse(XCTestDriverClient.kt:258)
+34
+at xcuitest.XCTestDriverClient.executeJsonRequest(XCTestDriverClient.kt:240)
+35
+at xcuitest.XCTestDriverClient.viewHierarchy(XCTestDriverClient.kt:72)
+36
+at ios.xctest.XCTestIOSDevice$viewHierarchy$1.invoke(XCTestIOSDevice.kt:40)
+37
+at ios.xctest.XCTestIOSDevice$viewHierarchy$1.invoke(XCTestIOSDevice.kt:38)
+38
+at ios.xctest.XCTestIOSDevice.execute(XCTestIOSDevice.kt:227)
+39
+at ios.xctest.XCTestIOSDevice.viewHierarchy(XCTestIOSDevice.kt:38)
+40
+at ios.LocalIOSDevice.viewHierarchy(LocalIOSDevice.kt:47)
+41
+at maestro.drivers.IOSDriver.viewHierarchy(IOSDriver.kt:152)
+42
+at maestro.drivers.IOSDriver.access$viewHierarchy(IOSDriver.kt:41)
+43
+at maestro.drivers.IOSDriver$contentDescriptor$1.invoke(IOSDriver.kt:147)
+44
+at maestro.drivers.IOSDriver$contentDescriptor$1.invoke(IOSDriver.kt:147)
+45
+at maestro.drivers.IOSDriver.runDeviceCall(IOSDriver.kt:499)
+46
+at maestro.drivers.IOSDriver.contentDescriptor(IOSDriver.kt:147)
+47
+at maestro.ViewHierarchy$Companion.from-8JJjmZI(ViewHierarchy.kt:29)
+48
+at maestro.utils.ScreenshotUtils$Companion.viewHierarchy-c1iYVAs(ScreenshotUtils.kt:99)
+49
+at maestro.utils.ScreenshotUtils$Companion.waitForAppToSettle-OpTFbEc(ScreenshotUtils.kt:58)
+50
+at maestro.drivers.IOSDriver.waitForAppToSettle-5RpGHs4(IOSDriver.kt:429)
+51
+at maestro.Maestro.waitForAppToSettle-5RpGHs4(Maestro.kt:474)
+52
+at maestro.Maestro.waitForAppToSettle-5RpGHs4$default(Maestro.kt:469)
+53
+at maestro.Maestro.screenshotBasedTap-hbl3e4M(Maestro.kt:314)
+54
+at maestro.Maestro.performTap-hbl3e4M(Maestro.kt:283)
+55
+at maestro.Maestro.tap-BUbHBYE(Maestro.kt:195)
+56
+at maestro.orchestra.Orchestra.tapOnElement(Orchestra.kt:777)
+57
+at maestro.orchestra.Orchestra.executeCommand(Orchestra.kt:240)
+58
+at maestro.orchestra.Orchestra.executeSubflowCommands(Orchestra.kt:605)
+59
+at maestro.orchestra.Orchestra.runSubFlow(Orchestra.kt:646)
+60
+at maestro.orchestra.Orchestra.runFlowCommand(Orchestra.kt:514)
+61
+at maestro.orchestra.Orchestra.executeCommand(Orchestra.kt:270)
+62
+at maestro.orchestra.Orchestra.executeCommands(Orchestra.kt:201)
+63
+at maestro.orchestra.Orchestra.runFlow(Orchestra.kt:111)
+64
+at maestro.orchestra.Orchestra.runFlow$default(Orchestra.kt:75)
+65
+at maestro.cli.runner.MaestroCommandRunner.runCommands(MaestroCommandRunner.kt:185)
+66
+at maestro.cli.runner.TestRunner$runSingle$result$1.invoke(TestRunner.kt:54)
+67
+at maestro.cli.runner.TestRunner$runSingle$result$1.invoke(TestRunner.kt:51)
+68
+at maestro.cli.runner.TestRunner.runCatching(TestRunner.kt:145)
+69
+at maestro.cli.runner.TestRunner.runSingle(TestRunner.kt:51)
+70
+at maestro.cli.command.TestCommand$handleSessions$1$1$results$1$1$1.invoke(TestCommand.kt:291)
+71
+at maestro.cli.command.TestCommand$handleSessions$1$1$results$1$1$1.invoke(TestCommand.kt:249)
+72
+at maestro.cli.session.MaestroSessionManager.newSession(MaestroSessionManager.kt:107)
+73
+at maestro.cli.session.MaestroSessionManager.newSession$default(MaestroSessionManager.kt:58)
+74
+at maestro.cli.command.TestCommand$handleSessions$1$1$results$1$1.invokeSuspend(TestCommand.kt:249)
+75
+at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+76
+at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:104)
+77
+at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:111)
+78
+at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:99)
+79
+at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:585)
+80
+at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:802)
+81
+at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:706)
+82
+at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:693)
+
